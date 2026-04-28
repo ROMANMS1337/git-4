@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Restore') {
             steps {
-                bat 'chcp 65001 && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" Sample-lab4.slnx -t:restore -p:RestorePackagesConfig=true'
+                bat 'chcp 65001 && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" Sample-lab4\\Sample-lab4.vcxproj -t:restore'
             }
         }
         stage('Build') {
             steps {
-                bat 'chcp 65001 && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" Sample-lab4.slnx /t:Build /p:Configuration=Debug'
+                bat 'chcp 65001 && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" Sample-lab4.slnx /t:Rebuild /p:Configuration=Debug'
             }
         }
         stage('Test') {
