@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat "\"C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe\" Sample-lab4.slnx /t:Build /p:Configuration=Debug"
+                bat "\"C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/MSBuild.exe\" Sample-lab4.slnx /t:Build /p:Configuration=Debug"
             }
         }
         stage('Test') {
